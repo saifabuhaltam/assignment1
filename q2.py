@@ -27,11 +27,11 @@ for i in range(k):
         print('Enter the first number in the interval of [0,100]:\n')
         first = int(input())
 
-        if 0 < first < 100:
+        if 0 <= first <= 100:
             print('Enter the second number in the interval of [0,100]:\n')
             second = int(input())
 
-            if 0 < second < 100:
+            if 0 <= second <= 100:
                 if sign == 1:
                     print(first, "+", second, "=", add(first, second))
                 elif sign == 2:
