@@ -12,7 +12,7 @@ if cont in ['Y', 'y']:
     wellness = input().lower().strip()
 
     if wellness in ['good', "i'm great", "i'm good", 'fine']:
-        print(f'I’m glad you’re feeling well, ', name, '.')
+        print("I'm glad you’re feeling well, ", name, '.')
     elif wellness in ['bad', 'not okay', "i'm not feeling good"]:
         print('Have some time to yourself to recharge!')
     else:
