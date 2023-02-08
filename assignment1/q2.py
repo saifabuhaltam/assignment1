@@ -1,5 +1,4 @@
-print('Hi, how many operations do you want MagiCal to perform?\n')
-k = int(input())
+k = int(input('Hi, how many operations do you want MagiCal to perform?\n'))
 
 
 def add(x, y):
@@ -20,18 +19,17 @@ def divide(x, y):
 
 for i in range(k):
 
-    print('Select the operator from the list of Addition (1), Subtraction (2), Multiplication (3), Division (4):\n')
-    sign = int(input())
+    sign = input(
+        "Select the operator from the list of Addition (1), Subtraction (2), Multiplication (3), Division (4):\n")
 
-    if sign in [1, 2, 3, 4]:
-        print('Enter the first number in the interval of [0,100]:\n')
-        first = int(input())
+    try:
+        sign = int(sign)
+        if sign in [1, 2, 3, 4]:
+            first = int(input('Enter the first number in the interval of [0,100]:\n'))
 
-        if 0 <= first <= 100:
-            print('Enter the second number in the interval of [0,100]:\n')
-            second = int(input())
+            second = int(input('Enter the second number in the interval of [0,100]:\n'))
 
-            if 0 <= second <= 100:
+            if 0 <= first <= 100 and 0 <= second <= 100:
                 if sign == 1:
                     print(first, "+", second, "=", add(first, second))
                 elif sign == 2:
@@ -46,6 +44,6 @@ for i in range(k):
             else:
                 print('Magic calculator can not perform your operation!')
         else:
-            print('Magic calculator can not perform your operation!')
-    else:
+            raise ValueError
+    except ValueError:
         print('Invalid input!')
